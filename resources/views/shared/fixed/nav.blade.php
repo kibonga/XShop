@@ -1,15 +1,17 @@
 <!-- Header -->
 <nav class="navbar navbar-expand-lg navbar-light shadow">
+    {{--    Nav container--}}
     <div class="container d-flex justify-content-between align-items-center">
 
-        <a class="navbar-brand text-success logo h1 align-self-center" href="#">
-            {{env('APP_NAME')}}
-        </a>
+        {{-- Logo --}}
+        @include('shared.fixed.nav.logo')
+        {{-- Logo --}}
 
         {{--  Mobile nav button--}}
-
+        @include('shared.fixed.nav.mobile-button')
         {{--  Mobile nav button--}}
 
+        {{--Nav wrapper--}}
         <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
              id="templatemo_main_nav">
 
@@ -25,22 +27,17 @@
             </div>
             {{-- Nav --}}
 
-
+            {{--Nav utils--}}
             <div class="navbar align-self-center d-flex">
-                <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
-                        <div class="input-group-text">
-                            <i class="fa fa-fw fa-search"></i>
-                        </div>
-                    </div>
-                </div>
-                @include('shared.utils.search')
-                @include('shared.utils.cart')
-                @include('shared.utils.profile')
+                @include('shared.fixed.nav.search')
+                @include('shared.fixed.nav.cart')
+                @include('shared.fixed.nav.profile')
             </div>
-        </div>
+            {{--Nav utils--}}
 
+        </div>
+        {{--Nav wrapper--}}
     </div>
+    {{--    Nav container--}}
 </nav>
 <!-- Close Header -->
