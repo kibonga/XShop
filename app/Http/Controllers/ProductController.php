@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Color;
 use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use App\Models\ProductModel;
 
 class ProductController extends Controller
 {
@@ -15,7 +18,16 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+
+//        dd(Product::with('images')->get()[0]->images());
+//        dd(Product::find(1)->images[0]->path);
+
+        return view('products.index')->with([
+            'categories' => Category::all(),
+            'models' => ProductModel::all(),
+            'colors' => Color::all(),
+            'products' => Product::all(),
+        ]);
     }
 
     /**

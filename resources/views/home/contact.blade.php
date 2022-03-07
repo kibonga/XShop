@@ -1,11 +1,11 @@
 @extends('app')
-@section('title', Config::get('consts.page-titles.contact'))
+@section('title', Config::get('consts.pages.contact.title'))
 @section('content')
     <!-- Start Contact Page -->
 
     <div class="container-fluid bg-light py-5">
         <div class="col-md-6 m-auto text-center">
-            <h1 class="h1">{{Config::get('consts.page-titles.contact')}}</h1>
+            <h1 class="h1">{{Config::get('consts.pages.contact.title')}}</h1>
             <p class="h3">
                 {{Config::get('consts.pages.contact.sub-heading')}}
             </p>

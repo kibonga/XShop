@@ -175,6 +175,26 @@ return [
 
    ],
 
+    'products-select' => [
+        [
+            'name' => 'Price ASC',
+            'value' => 'price_asc'
+        ],
+        [
+            'name' => 'Price DESC',
+            'value' => 'price_desc'
+        ],
+        [
+            'name' => 'Latest',
+            'value' => 'date_desc'
+        ],
+        [
+            'name' => 'Oldest',
+            'value' => 'date_asc'
+        ],
+
+    ],
+
   'contact-info' => [
       'address' => [
           'icon' => 'fa-map-marker',
@@ -280,6 +300,21 @@ return [
                   'icon' => 'fa fa-user',
                   'name' => '24 Hours Service'
               ],
+          ]
+      ],
+      'products' => [
+          'index' => [
+              'title' => 'All products',
+              'main-heading' => 'All products',
+              'sub-heading' => 'Here you can see all available products',
+              'headings' => [
+                  'filters' => 'Filters'
+              ],
+              'filters' => [
+                  'categories' => 'Categories',
+                  'models' => 'Models',
+                  'colors' => 'Colors',
+              ]
           ]
       ]
   ]

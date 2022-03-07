@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use App\Models\Color;
 use App\Models\Image;
 use App\Models\Price;
@@ -36,6 +37,7 @@ class ProductSeeder extends Seeder
 
                 $color = Color::find($product->color_id)->name;
                 $model = strtolower(ProductModel::find($product->model_id)->name);
+                $category = Category::find($product->category_id)->value;
 
                 $modelArr = explode(' ', $model);
                 $colorArr = explode(' ', $color);
@@ -62,7 +64,7 @@ class ProductSeeder extends Seeder
                         }else {
                             $color = $tmpColor;
                         }
-                        if (str_contains($image, $color)) {
+                        if (str_contains($image, $color) && str_contains($image, $category)) {
                             array_push($tmpImages, $image);
                         }
                         $color = $tmpColor;

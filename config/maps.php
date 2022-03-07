@@ -27,7 +27,7 @@ return [
             'yes' => ['7', '8', 'plus'],
             'images' => [
                 'silicone_iphone_7_8_plus_blue_01.jpg',
-                'silicone_iphone_7_8_plus_green_01.jpg',
+                'silicone_iphone_7_8_plus_green_02.jpg',
             ]
         ],
         'all' => [
@@ -37,7 +37,7 @@ return [
             'images' => [
                 'anti-static_iphone_black_01.jpg',
                 'anti-static_iphone_blue_02.jpg',
-                'flip_iphone_camo_10.jpg',
+                'flip_iphone_camo_10.png',
                 'flip_iphone_camo_11.jpg',
                 'plastic_iphone_floral_05.jpg',
                 'plastic_iphone_floral_06.jpg',
@@ -49,7 +49,7 @@ return [
                 'plastic_iphone_multicolor_12.jpg',
                 'plastic_iphone_multicolor_13.jpg',
                 'plastic_iphone_multicolor_14.jpg',
-                'plastic_iphone_multicolor_15.jpg',
+                'plastic_iphone_multicolor_15.png',
                 'plastic_iphone_multicolor_16.jpg',
                 'anti-static_iphone_red_17.jpg',
                 'silicone_iphone_transparent_18.jpg',
