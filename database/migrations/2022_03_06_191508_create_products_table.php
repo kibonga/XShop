@@ -17,10 +17,12 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
-            $table->unsignedBigInteger('model_id');
+            $table->unsignedBigInteger('model_id')->index();
             $table->foreign('model_id')->references('id')->on('product_models');
-            $table->unsignedBigInteger('color_id');
+            $table->unsignedBigInteger('color_id')->index();
             $table->foreign('color_id')->references('id')->on('colors');
+            $table->unsignedBigInteger('category_id')->index();
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }

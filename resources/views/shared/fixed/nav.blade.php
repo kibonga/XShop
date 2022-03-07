@@ -4,11 +4,11 @@
     <div class="container d-flex justify-content-between align-items-center">
 
         {{-- Logo --}}
-        @include('shared.fixed.nav.logo')
+        @include('shared.fixed.nav._logo')
         {{-- Logo --}}
 
         {{--  Mobile nav button--}}
-        @include('shared.fixed.nav.mobile-button')
+        @include('shared.fixed.nav._mobile-button')
         {{--  Mobile nav button--}}
 
         {{--Nav wrapper--}}
@@ -18,20 +18,16 @@
             {{-- Nav --}}
             <div class="flex-fill">
                 <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
-                    @foreach($navs as $nav)
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route($nav->route) }}">{{$nav->name}}</a>
-                        </li>
-                    @endforeach
+                    @include('shared.fixed.nav._nav')
                 </ul>
             </div>
             {{-- Nav --}}
 
             {{--Nav utils--}}
             <div class="navbar align-self-center d-flex">
-                @include('shared.fixed.nav.search')
-                @include('shared.fixed.nav.cart')
-                @include('shared.fixed.nav.profile')
+                @include('shared.fixed.nav._search')
+                @include('shared.fixed.nav._cart')
+                @include('shared.fixed.nav._profile')
             </div>
             {{--Nav utils--}}
 

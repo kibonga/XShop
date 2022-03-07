@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
 
     {{--Styles--}}
-    @include('shared.styles')
+    @include('shared.assets.styles')
     {{--Scripts--}}
-    @include('shared.scripts')
+    @include('shared.assets.scripts')
 </head>
