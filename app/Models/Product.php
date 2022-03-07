@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * App\Models\Product
@@ -17,6 +18,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+    use SoftDeletes;
     protected $fillable = [
         'name', 'description', 'model_id', 'color_id'
     ];
@@ -35,6 +37,10 @@ class Product extends Model
 
     public function images() {
         return $this->morphMany(Image::class, 'imageable');
+    }
+
+    public function prices() {
+        return $this->hasMany(Price::class);
     }
 
 }

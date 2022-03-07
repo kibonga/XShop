@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Color;
 use App\Models\Image;
+use App\Models\Price;
 use App\Models\Product;
 use App\Models\ProductModel;
 use Illuminate\Database\Seeder;
@@ -61,40 +62,41 @@ class ProductSeeder extends Seeder
                         }else {
                             $color = $tmpColor;
                         }
-                        dump($image);
-                        dump($color);
                         if (str_contains($image, $color)) {
-                            dump("Do i go into IF");
                             array_push($tmpImages, $image);
-                            dump($tmpImages);
-                        }else {
-                            dump("I go into ELSE");
                         }
                         $color = $tmpColor;
                     }
-                    dump("Lets see");
-                    dump($model);
-                    dump($color);
-                    dump($tmpImages);
+
                     if(!empty($tmpImages)) {
                         break;
                     }
                 }
 
                 $path = $tmpImages[array_rand($tmpImages)];
-//                dump("This is the final path");
-//                dump($product->name);
-//                dump($path);
-//                die();
 
-
+                // Set image for product
                 $product->images()->save(
                     Image::make([
                         'path' => $path
                     ])
                 );
+
+
+                // Set price for product
+                $product->prices()->save(
+                    Price::make([
+                        'price' => $this->getPrice()
+                    ])
+                );
             }
         });
 
+    }
+
+    private function getPrice() {
+        $min = 15;
+        $max = 100;
+        return mt_rand ($min*10, $max*10) / 10;
     }
 }

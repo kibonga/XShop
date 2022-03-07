@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration
             $table->foreign('color_id')->references('id')->on('colors');
             $table->unsignedBigInteger('category_id')->index();
             $table->foreign('category_id')->references('id')->on('categories');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
