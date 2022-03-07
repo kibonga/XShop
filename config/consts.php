@@ -315,7 +315,18 @@ return [
                   'models' => 'Models',
                   'colors' => 'Colors',
               ]
-          ]
+          ],
+          'show' => [
+              'title' => "Single product",
+              'main-heading' => 'Display single product',
+              'sub-heading' => 'Here you can see single product',
+              'headings' => [
+                  'model' => 'Model',
+                  'color' => 'Color',
+                  'description' => 'Description',
+                  'category' => 'Category'
+              ],
+          ],
       ]
   ]
 ];
