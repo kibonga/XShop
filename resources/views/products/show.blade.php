@@ -21,7 +21,10 @@
 
                     {{--Single product slider--}}
                     <div class="row">
-                        @include('products.partials.show._single-product-slider')
+                        @include('products.partials.show._single-product-slider', [
+                        'images' => $product->images,
+                        'name' => $product->name
+                    ])
                     </div>
                     {{--Single product slider--}}
                 </div>

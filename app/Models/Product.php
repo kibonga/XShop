@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -41,6 +42,13 @@ class Product extends Model
 
     public function prices() {
         return $this->hasMany(Price::class);
+    }
+
+    public function scopeWithRelations(Builder $query): Builder
+    {
+        return $query->with('category')
+                ->with('images')
+                ->with('prices');
     }
 
 }

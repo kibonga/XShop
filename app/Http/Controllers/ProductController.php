@@ -19,14 +19,9 @@ class ProductController extends Controller
     public function index()
     {
 
-//        dd(Product::with('images')->get()[0]->images());
-//        dd(Product::find(1)->images[0]->path);
-
         return view('products.index')->with([
-            'categories' => Category::all(),
-            'models' => ProductModel::all(),
-            'colors' => Color::all(),
-            'products' => Product::all(),
+            //'products' => Product::with('prices')->with('images')->with('category')->get(),
+            'products' => Product::withRelations()->get()
         ]);
     }
 
@@ -60,7 +55,7 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         return view('products.show')->with([
-            'product' => $product
+            'product' => Product::withRelations()->findOrFail($product->id)
         ]);
     }
 

@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Http\Composers\AboutComposer;
+use App\Http\Composers\AllFiltersComposer;
 use App\Http\Composers\ContactComposer;
 use App\Http\Composers\NavComposer;
 use App\Http\Composers\ProductsSelectOptionsComposer;
@@ -28,9 +29,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('*', NavComposer::class);
+        View::composer(['shared.fixed.nav._nav'], NavComposer::class);
         View::composer('*', ContactComposer::class);
         View::composer(['products.index'], ProductsSelectOptionsComposer::class);
         View::composer(['home.about'], AboutComposer::class);
+        View::composer(['products.partials.index._all-checkboxes'], AllFiltersComposer::class);
     }
 }

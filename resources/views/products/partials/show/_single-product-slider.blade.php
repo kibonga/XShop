@@ -1,4 +1,3 @@
-
 <!--Start Controls-->
 <div class="col-1 align-self-center">
     <a href="#multi-item-example" role="button" data-bs-slide="prev">
@@ -13,71 +12,77 @@
     <!--Start Slides-->
     <div class="carousel-inner product-links-wap" role="listbox">
 
-        <!--First slide-->
-        <div class="carousel-item active">
-            <div class="row">
-                <div class="col-4">
-                    <a href="#">
-                        <img class="card-img img-fluid" src="{{asset('assets/img/product_single_01.jpg')}}" alt="Product Image 1">
-                    </a>
-                </div>
-                <div class="col-4">
-                    <a href="#">
-                        <img class="card-img img-fluid" src="{{asset('assets/img/product_single_02.jpg')}}" alt="Product Image 2">
-                    </a>
-                </div>
-                <div class="col-4">
-                    <a href="#">
-                        <img class="card-img img-fluid" src="{{asset('assets/img/product_single_03.jpg')}}" alt="Product Image 3">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <!--/.First slide-->
 
-        <!--Second slide-->
-        <div class="carousel-item">
-            <div class="row">
-                <div class="col-4">
-                    <a href="#">
-                        <img class="card-img img-fluid" src="{{asset('assets/img/product_single_04.jpg')}}" alt="Product Image 4">
-                    </a>
-                </div>
-                <div class="col-4">
-                    <a href="#">
-                        <img class="card-img img-fluid" src="{{asset('assets/img/product_single_05.jpg')}}" alt="Product Image 5">
-                    </a>
-                </div>
-                <div class="col-4">
-                    <a href="#">
-                        <img class="card-img img-fluid" src="{{asset('assets/img/product_single_06.jpg')}}" alt="Product Image 6">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <!--/.Second slide-->
+        {{--                @foreach($images as $image)--}}
+        {{--                    <div class="col-4">--}}
+        {{--                        <a href="#">--}}
+        {{--                            <img class="card-img img-fluid" src="{{asset('assets/img/products/' . $image->path)}}"--}}
+        {{--                                 alt="{{$name}}-{{$loop->index}}">--}}
+        {{--                        </a>--}}
+        {{--                    </div>--}}
+        {{--                @endforeach--}}
 
-        <!--Third slide-->
-        <div class="carousel-item">
-            <div class="row">
-                <div class="col-4">
-                    <a href="#">
-                        <img class="card-img img-fluid" src="{{asset('assets/img/product_single_07.jpg')}}" alt="Product Image 7">
-                    </a>
+        @for($i=0; $i<=4; $i++)
+            <!--First slide-->
+                <div class="carousel-item {{($i == 0) ? 'active' : ''}}">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-4">
+                            <a href="#">
+                                <img class="card-img img-fluid" src="{{asset('assets/img/products/' . $images[0]->path)}}"
+                                     alt="{{$name}}-{{$i}}">
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-4">
-                    <a href="#">
-                        <img class="card-img img-fluid" src="{{asset('assets/img/product_single_08.jpg')}}" alt="Product Image 7">
-                    </a>
-                </div>
-                <div class="col-4">
-                    <a href="#">
-                        <img class="card-img img-fluid" src="{{asset('assets/img/product_single_09.jpg')}}" alt="Product Image 7">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <!--/.Third slide-->
+                <!--/.First slide-->
+        @endfor
+
+
+
+
+        {{--        <!--Second slide-->--}}
+        {{--        <div class="carousel-item">--}}
+        {{--            <div class="row">--}}
+        {{--                <div class="col-4">--}}
+        {{--                    <a href="#">--}}
+        {{--                        <img class="card-img img-fluid" src="{{asset('assets/img/product_single_04.jpg')}}" alt="Product Image 4">--}}
+        {{--                    </a>--}}
+        {{--                </div>--}}
+        {{--                <div class="col-4">--}}
+        {{--                    <a href="#">--}}
+        {{--                        <img class="card-img img-fluid" src="{{asset('assets/img/product_single_05.jpg')}}" alt="Product Image 5">--}}
+        {{--                    </a>--}}
+        {{--                </div>--}}
+        {{--                <div class="col-4">--}}
+        {{--                    <a href="#">--}}
+        {{--                        <img class="card-img img-fluid" src="{{asset('assets/img/product_single_06.jpg')}}" alt="Product Image 6">--}}
+        {{--                    </a>--}}
+        {{--                </div>--}}
+        {{--            </div>--}}
+        {{--        </div>--}}
+        {{--        <!--/.Second slide-->--}}
+
+        {{--        <!--Third slide-->--}}
+        {{--        <div class="carousel-item">--}}
+        {{--            <div class="row">--}}
+        {{--                <div class="col-4">--}}
+        {{--                    <a href="#">--}}
+        {{--                        <img class="card-img img-fluid" src="{{asset('assets/img/product_single_07.jpg')}}" alt="Product Image 7">--}}
+        {{--                    </a>--}}
+        {{--                </div>--}}
+        {{--                <div class="col-4">--}}
+        {{--                    <a href="#">--}}
+        {{--                        <img class="card-img img-fluid" src="{{asset('assets/img/product_single_08.jpg')}}" alt="Product Image 7">--}}
+        {{--                    </a>--}}
+        {{--                </div>--}}
+        {{--                <div class="col-4">--}}
+        {{--                    <a href="#">--}}
+        {{--                        <img class="card-img img-fluid" src="{{asset('assets/img/product_single_09.jpg')}}" alt="Product Image 7">--}}
+        {{--                    </a>--}}
+        {{--                </div>--}}
+        {{--            </div>--}}
+        {{--        </div>--}}
+        {{--        <!--/.Third slide-->--}}
     </div>
     <!--End Slides-->
 </div>
