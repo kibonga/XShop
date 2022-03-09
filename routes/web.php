@@ -23,3 +23,4 @@ Route::get('/author', [HomeController::class, 'author'])->name('home.author');
 
 // Products
 Route::resource('products', ProductController::class);
+Route::post('products/fetch', [ProductController::class, 'fetch'])->name('products.fetch');

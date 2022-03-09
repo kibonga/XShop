@@ -41,7 +41,7 @@ class Product extends Model
     }
 
     public function prices() {
-        return $this->hasMany(Price::class);
+        return $this->hasMany(Price::class)->orderBy('price', 'DESC');
     }
 
     public function scopeWithRelations(Builder $query): Builder

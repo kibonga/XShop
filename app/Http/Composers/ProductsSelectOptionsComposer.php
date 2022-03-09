@@ -9,7 +9,8 @@ class ProductsSelectOptionsComposer
 {
     public function compose(View $view) {
         return $view->with([
-            'options' => Config::get('consts.products-select')
+            'sorts' => Config::get('consts.products-select'),
+            'perPages' => Config::get('consts.per-page-select')
         ]);
     }
 }

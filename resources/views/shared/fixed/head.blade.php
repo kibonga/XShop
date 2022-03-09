@@ -15,4 +15,6 @@
     @include('shared.assets.styles')
     {{--Scripts--}}
     @include('shared.assets.scripts')
+    {{--Non default scripts--}}
+    @yield('scripts')
 </head>

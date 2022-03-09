@@ -5,3 +5,7 @@
     @endforeach
 
 </div>
+
+{{--Display pagination--}}
+@include('products.partials.index._pagination')
+{{--Display pagination--}}

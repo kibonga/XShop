@@ -1,5 +1,11 @@
 @extends('app')
 @section('title', Config::get('consts.pages.products.show.title'))
+@section('scripts')
+    <!-- Start Slider Script -->
+    <script src="{{asset('assets/js/slick.min.js')}}" defer></script>
+    <script src="{{asset('assets/js/slider-single-product.js')}}" defer ></script>
+    <!-- End Slider Script -->
+@endsection
 @section('content')
 
     {{--Heading--}}
@@ -43,7 +49,4 @@
     @include('products.partials.show._related-products')
     {{--    Related products--}}
 
-    {{--    Slider scripts--}}
-    @include('products.partials.show._single-product-slider-script')
-    {{--    Slider scripts--}}
 @endsection

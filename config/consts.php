@@ -177,6 +177,14 @@ return [
 
     'products-select' => [
         [
+            'name' => 'Latest',
+            'value' => 'date_desc'
+        ],
+        [
+            'name' => 'Oldest',
+            'value' => 'date_asc'
+        ],
+        [
             'name' => 'Price ASC',
             'value' => 'price_asc'
         ],
@@ -184,13 +192,24 @@ return [
             'name' => 'Price DESC',
             'value' => 'price_desc'
         ],
+    ],
+
+    'per-page-select' => [
         [
-            'name' => 'Latest',
-            'value' => 'date_desc'
+            'name' => '9',
+            'value' => 9
         ],
         [
-            'name' => 'Oldest',
-            'value' => 'date_asc'
+            'name' => '18',
+            'value' => 18
+        ],
+        [
+            'name' => '27',
+            'value' => 27
+        ],
+        [
+            'name' => '54',
+            'value' => 54
         ],
 
     ],
