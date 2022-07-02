@@ -4,8 +4,33 @@
 
             {{--Name and price--}}
             <h1 class="h2">{{$product->name}}</h1>
-            <p class="h3 py-2">${{$product->prices->first()->price}}</p>
+            <p class="h3 py-2">${{$product->price->price}}</p>
             {{--Name and price--}}
+
+
+            @auth
+                <div id="crud-actions" class="d-flex">
+                    @if(Auth::user()->isAdmin())
+                        @can('create', $product)
+                            <div>
+                                <a href="{{route('products.edit', ['product' => $product->id])}}"
+                                   class="btn btn-primary text-white">EDIT</a>
+                            </div>
+                        @endcan
+                        @can('delete', $product)
+                            @if(!$product->trashed())
+                                <div class="ms-4">
+                                    <form action="{{route('products.destroy', ['product' => $product->id])}}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Deactivate</button>
+                                    </form>
+                                </div>
+                            @endif
+                        @endcan
+                    @endif
+                </div>
+            @endauth
 
             {{--     Rating and pagination       --}}
             <p class="py-2">

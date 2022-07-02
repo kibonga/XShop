@@ -5,6 +5,12 @@
 <body>
 {{--Header--}}
 @include('shared.fixed.header')
+{{--Status message--}}
+<div class="container">
+    @if(session()->has('status'))
+        <div class="alert alert-success">{{session()->get('status')}}</div>
+    @endif
+</div>
 {{--Modal--}}
 @include('shared.utils.modal')
 {{--Content--}}

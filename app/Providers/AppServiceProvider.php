@@ -31,10 +31,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Paginator::useBootstrap();
-        View::composer(['shared.fixed.nav._nav'], NavComposer::class);
+        View::composer(['shared.fixed.nav', 'shared.fixed.footer'], NavComposer::class);
         View::composer('*', ContactComposer::class);
         View::composer(['products.index'], ProductsSelectOptionsComposer::class);
         View::composer(['home.about'], AboutComposer::class);
-        View::composer(['products.partials.index._all-checkboxes'], AllFiltersComposer::class);
+        View::composer(['products.index', 'products.partials.shared._form'], AllFiltersComposer::class);
     }
 }

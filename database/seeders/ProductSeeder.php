@@ -80,13 +80,13 @@ class ProductSeeder extends Seeder
                 // Set image for product
                 $product->images()->save(
                     Image::make([
-                        'path' => $path
+                        'path' => 'img/products/'. $path
                     ])
                 );
 
 
                 // Set price for product
-                $product->prices()->save(
+                $product->price()->save(
                     Price::make([
                         'price' => $this->getPrice()
                     ])

@@ -7,5 +7,7 @@
 </div>
 
 {{--Display pagination--}}
-@include('products.partials.index._pagination')
+<div class="d-flex justify-content-center">
+    {!! $products->links() !!}
+</div>
 {{--Display pagination--}}

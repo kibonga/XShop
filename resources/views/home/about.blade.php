@@ -41,12 +41,12 @@
             </x-section-heading>
             {{-- Heading - Brands --}}
 
-            {{-- Carousel --}}
-            <x-carousel>
-                @slot('items', $carouselItems)
-                @slot('type', 'brand')
-            </x-carousel>
-            {{-- Carousel --}}
+{{--            --}}{{-- Carousel --}}
+{{--            <x-carousel>--}}
+{{--                @slot('items', $carouselItems)--}}
+{{--                @slot('type', 'brand')--}}
+{{--            </x-carousel>--}}
+{{--            --}}{{-- Carousel --}}
 
         </div>
     </section>

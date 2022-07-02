@@ -3,7 +3,8 @@
 
         <div class="card rounded-0">
             <img class="card-img rounded-0 img-fluid"
-                 src="{{asset("assets/img/products/" . $product->images[0]->path )}}">
+                 {{--                 src="{{asset("storage/img/products/" . $product->images->first()->path )}}">--}}
+                 src="{{$product->images->first() ? $product->images->first()->url() : asset('storage/'. Config::get('consts.no-image'))}}">
 
             {{--Hover Actions--}}
             @include('products.partials.index._hover-actions')
@@ -24,8 +25,33 @@
             @include('products.partials.index._ratings')
             {{--Ratings--}}
 
-            <p class="text-center mb-0">${{$product->prices[0]->price}}</p>
+            <p class="text-center mb-0">${{$product->price->price}}</p>
         </div>
+
+        @auth
+            <div id="crud-actions" class="card-footer d-flex">
+                @if(Auth::user()->isAdmin())
+                    @can('create', $product)
+                        <div>
+                            <a href="{{route('products.edit', ['product' => $product->id])}}"
+                               class="btn btn-primary text-white">EDIT</a>
+                        </div>
+                    @endcan
+                    @can('delete', $product)
+                        @if(!$product->trashed())
+                            <div class="ms-4">
+                                <form action="{{route('products.destroy', ['product' => $product->id])}}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Deactivate</button>
+                                </form>
+                            </div>
+                        @endif
+                    @endcan
+                @endif
+            </div>
+        @endauth
+
 
     </div>
 </div>

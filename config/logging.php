@@ -1,5 +1,7 @@
 <?php
 
+use App\Logging\CustomizeFormatter;
+use App\Logging\SimpleFormatter;
 use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
@@ -112,6 +114,24 @@ return [
 
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
+        ],
+        'login' => [
+            'driver' => 'single',
+            'tap' => [CustomizeFormatter::class],
+            'path' => storage_path('logs/login.log'),
+            'level' => 'debug'
+        ],
+        'abuse' => [
+            'driver' => 'single',
+            'tap' => [CustomizeFormatter::class],
+            'path' => storage_path('logs/abuse.log'),
+            'level' => 'debug'
+        ],
+        'purchase' => [
+            'driver' => 'single',
+            'tap' => [CustomizeFormatter::class],
+            'path' => storage_path('logs/purchase.log'),
+            'level' => 'debug'
         ],
     ],
 

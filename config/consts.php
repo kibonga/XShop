@@ -1,11 +1,16 @@
 <?php
 return [
-
+    'no-image' => 'no-image.jpg',
   'navs' => [
       [
           'name' => 'Home',
           'route' => 'home.home',
           'ordering' => 1
+      ],
+      [
+          'name' => 'Products',
+          'route' => 'products.index',
+          'ordering' => 2
       ],
       [
           'name' => 'About',
@@ -247,7 +252,6 @@ return [
           'link' => 'https://www.linkedin.com/'
       ],
   ],
-
   'pages' => [
       'home' => [
           'title' => 'Homepage',
@@ -258,6 +262,17 @@ return [
           'title' => 'Contact',
           'main-heading' => 'Contact Us',
           'sub-heading' => 'Here You can contact Us',
+          'headings' => [
+              'services' => [
+                  'title' => 'Our Services',
+                  'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo. Lorem ipsum dolor sit amet.'
+              ]
+          ]
+      ],
+      'author' => [
+          'title' => 'Author',
+          'main-heading' => 'Author',
+          'sub-heading' => 'Here You can learn more about author of this mf website',
           'headings' => [
               'services' => [
                   'title' => 'Our Services',
@@ -346,6 +361,127 @@ return [
                   'category' => 'Category'
               ],
           ],
-      ]
+          'edit' => [
+              'title' => "Edit Single product",
+              'main-heading' => 'Edit single product',
+              'sub-heading' => 'Here you can edit single product',
+              'headings' => [
+                  'model' => 'Model',
+                  'color' => 'Color',
+                  'description' => 'Description',
+                  'category' => 'Category'
+              ],
+          ],
+          'create' => [
+              'title' => "Create Single product",
+              'main-heading' => 'Create single product',
+              'sub-heading' => 'Here you can create single product',
+              'headings' => [
+                  'model' => 'Model',
+                  'color' => 'Color',
+                  'description' => 'Description',
+                  'category' => 'Category'
+              ],
+          ],
+
+      ],
+      'login' => [
+          'title' => 'Login',
+          'main-heading' => 'Login page',
+          'sub-heading' => 'Have an account? Here You can login',
+          'headings' => [
+
+          ],
+      ],
+      'register' => [
+          'title' => 'Register',
+          'main-heading' => 'Register page',
+          'sub-heading' => "Don't have an account? Here You can register",
+          'headings' => [
+
+          ],
+      ],
+      'cart' => [
+          'title' => 'Cart',
+          'main-heading' => 'Cart page',
+          'sub-heading' => "Here you can see contents of your cart",
+          'headings' => [
+
+          ],
+      ],
+      'orders' => [
+          'index' => [
+              'title' => 'All orders',
+              'main-heading' => 'All orders',
+              'sub-heading' => 'Here you can see all orders',
+              'headings' => [
+
+              ],
+          ],
+          'show' => [
+              'title' => 'Single order',
+              'main-heading' => 'Single order',
+              'sub-heading' => 'Here you can see single order',
+              'headings' => [
+
+              ],
+          ],
+      ],
+      'customers' => [
+          'index' => [
+              'title' => 'All customers',
+              'main-heading' => 'All customers',
+              'sub-heading' => 'Here you can see all customers',
+              'headings' => [
+
+              ],
+          ],
+          'show' => [
+              'title' => 'Single customer',
+              'main-heading' => 'Single customer',
+              'sub-heading' => 'Here you can see single customer',
+              'headings' => [
+
+              ],
+          ],
+      ],
+      'filters' => [
+          'index' => [
+              'title' => 'All filters',
+              'main-heading' => 'All filters',
+              'sub-heading' => 'Here you can see all filters',
+              'headings' => [
+
+              ],
+          ],
+          'show' => [
+              'title' => 'Single filter',
+              'main-heading' => 'Single filter',
+              'sub-heading' => 'Here you can see single filter',
+              'headings' => [
+
+              ],
+          ],
+      ],
+      'activities' => [
+          'index' => [
+              'title' => 'All activities',
+              'main-heading' => 'All activities',
+              'sub-heading' => 'Here you can see all activities',
+              'headings' => [
+
+              ],
+          ],
+      ],
+      'dashboard' => [
+          'index' => [
+              'title' => 'Admin Dashboard',
+              'main-heading' => 'Welcome back you mfer',
+              'sub-heading' => 'Dressed like Gestapo...',
+              'headings' => [
+
+              ],
+          ],
+      ],
   ]
 ];

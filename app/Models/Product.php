@@ -21,7 +21,7 @@ class Product extends Model
     use HasFactory;
     use SoftDeletes;
     protected $fillable = [
-        'name', 'description', 'model_id', 'color_id'
+        'name', 'description', 'model_id', 'color_id', 'category_id'
     ];
 
     public function model() {
@@ -40,15 +40,26 @@ class Product extends Model
         return $this->morphMany(Image::class, 'imageable');
     }
 
-    public function prices() {
-        return $this->hasMany(Price::class)->orderBy('price', 'DESC');
+    public function price() {
+        return $this->hasOne(Price::class)->orderBy('price', 'DESC');
     }
+
+    public function orders() {
+//        return $this->hasMany(OrderLine::class);
+        return $this->hasMany(OrderLine::class);
+    }
+
+
+//    public function orderLines() {
+//        return $this->belongsToMany(OrderLine::class);
+////        return $this->hasMany(OrderLine::class);
+//    }
 
     public function scopeWithRelations(Builder $query): Builder
     {
         return $query->with('category')
                 ->with('images')
-                ->with('prices');
+                ->with('price');
     }
 
 }

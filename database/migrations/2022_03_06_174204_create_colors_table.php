@@ -17,6 +17,7 @@ class CreateColorsTable extends Migration
             $table->id();
             $table->string('name');
             $table->integer('ordering');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

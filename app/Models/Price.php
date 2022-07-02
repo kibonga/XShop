@@ -11,6 +11,10 @@ class Price extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected $fillable = [
+        'price'
+    ];
+
     public function product() {
         return $this->belongsTo(Product::class);
     }

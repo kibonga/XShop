@@ -4,4 +4,5 @@
 <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}" defer></script>
 <script src="{{asset('assets/js/templatemo.js')}}" defer></script>
 <script src="{{asset('assets/js/custom.js')}}" defer></script>
+<script src="{{asset('assets/js/shared.js')}}"defer></script>
 <!-- End Script -->

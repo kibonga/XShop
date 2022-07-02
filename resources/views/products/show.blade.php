@@ -4,6 +4,7 @@
     <!-- Start Slider Script -->
     <script src="{{asset('assets/js/slick.min.js')}}" defer></script>
     <script src="{{asset('assets/js/slider-single-product.js')}}" defer ></script>
+    <script src="{{asset('assets/js/products-show.js')}}" defer></script>
     <!-- End Slider Script -->
 @endsection
 @section('content')
@@ -21,8 +22,13 @@
             <div class="row">
 
                 <div class="col-lg-5 mt-5">
+
                     {{--Single prouct main image--}}
-                    @include('products.partials.show._main-image')
+                    <div class="card mb-3">
+                        <img class="card-img img-fluid" id="main-image"
+                             src="{{$product->images->first() ? $product->images->first()->url() : asset('storage/'. Config::get('consts.no-image'))}}" alt="Card image cap"
+                             id="product-detail">
+                    </div>
                     {{--Single prouct main image--}}
 
                     {{--Single product slider--}}
