@@ -47,8 +47,10 @@
 
 <p>To run this project, install it locally</p>
 
+```
 $ php artisan migrate:fresh
 $ php artisan db:seed
+```
 
 <p><a href="https://github.com/kibonga/XShop/blob/aa8b4a294a1983f033cec133bd38d7379ef15471/xshop_login_credentials.txt" alt="link_xshop_login_credentials">Login credentials</a></p>
 
