@@ -45,7 +45,7 @@
 
 ## Usage
 
-<p>To run this project, install it locally</p>
+<p>To run this project, install it locally and then apply migrations and seeders.</p>
 
 ```
 $ php artisan migrate:fresh
